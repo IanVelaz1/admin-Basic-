@@ -1,0 +1,80 @@
+<app-navbars></app-navbars>
+<div class="container-body">
+  <div class="container-fluid">
+    <br>
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label for="nombreProd">Titulo</label>
+                    <input type="email" class="form-control" id="nombreProd" aria-describedby="emailHelp" placeholder="Nombre Producto">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Descripcion</label>
+                    <quill-editor class="form-control" placeholder="descripcion">
+                    </quill-editor>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-4" *ngFor="let imagen of arrayImagenesProducto">
+
+            <div class="card">
+              <img src="{{imagen.secure_url}}" alt="" height="100%" width="100%">
+              <button class="btn btn-danger" (click)="eliminarImagen(imagen.public_id)">Eliminar</button>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <!-- <dropzone [message]="'Click aqui o arrastrar imagen para subir'" [config]="config" (error)="onUploadError($event)" (addedFile)="addedFile($event)" (success)="onUploadSuccess($event)"></dropzone> ---->
+
+                <file-drop headertext="Arrastrar imagenes aqui" name="recfile" (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)"
+                  (onFileLeave)="fileLeave($event)">
+                  <span></span>
+                </file-drop>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+       
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                  <label for="">Envio</label>
+                  <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Este producto requiere envio?</label>
+                    </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-success" (click)="guardarProducto()" style="width: 100%;">Guardar Producto</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br>
+</div>

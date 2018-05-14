@@ -1,0 +1,57 @@
+<app-navbars></app-navbars>
+<div class="container-body">
+  <br>
+    <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body" style="text-align: center;">
+              <h2>Configuracion</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+   <div class="container-fluid fila-1">
+      <div class="row fila-2">
+        <div class="col-12">
+           <div class="card card-cont">
+             <div class="card-body">
+                <div class="row">
+                  <div class="col-12" style="text-align: center;">
+                    <h4>Opciones de administrador</h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <label for="contraUser" >Contraseña antigua:</label>
+                    <input type="password" [(ngModel)]="objetoAdmin.oldPassword" name="oldPassword"  placeholder="Contraseña antigua" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <label for="contraUser">Contraseña nueva:</label>
+                    <input type="password" [(ngModel)]="objetoAdmin.password" name="newPassword" placeholder="Contraseña antigua" class="form-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <label for="contraUser">Repetir contraseña nueva:</label>
+                    <input type="password" [(ngModel)]="objetoAdmin.newPasswordRep" name="newPasswordRep"  placeholder="Contraseña antigua" class="form-control">
+                  </div>
+                </div>
+                <br>
+                <p class="error" *ngIf="notMatch==true">Las contraseñas no coinciden</p>
+                <p class="error">Las contraseña antigua es incorrecta</p>
+                <div class="row">
+                  <div class="col-12">
+                    <button style="float: right;" class="btn btn-success" (click)="editarAdmin()">Guardar cambios</button>
+                  </div>
+                </div>
+             </div>
+            
+           </div>
+        </div>
+      </div>
+      
+   </div>
+
+</div>

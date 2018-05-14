@@ -1,0 +1,7 @@
+.container-body{
+  border: 1px solid black;
+  overflow-y: auto;
+  background-color: #f0f3f4;
+  margin-left: 12%;
+
+}
