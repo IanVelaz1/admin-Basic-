@@ -15,7 +15,7 @@ import {ChangeDetectorRef} from '@angular/core';
 })
 export class AgregarProductoComponent implements OnInit {
 
-  constructor(private imagenService:SubirFotosService,private sanitizer:DomSanitizer,private refreshService:CrearProductoRefreshService,private router:Router,private ref:ChangeDetectorRef) {
+  constructor(private imagenService:SubirFotosService,private sanitizer:DomSanitizer,private refreshService:CrearProductoRefreshService,private router:Router,private ref:ChangeDetectorRef){
     setInterval(()=>{
          this.ref.markForCheck();
     },500);

@@ -17,6 +17,9 @@ import {PaginasComponent} from './components/admin/paginas/paginas.component';
 import {AgregarPaginaComponent} from './components/admin/paginas/agregar-pagina/agregar-pagina.component';
 import {VerPaginaComponent} from './components/admin/paginas/ver-pagina/ver-pagina.component';
 import {ConfigComponent} from './components/admin/config/config.component';
+import {EventosComponent} from './components/admin/eventos/eventos.component';
+import {EventoEspecificoAdminComponent} from './components/admin/evento-especifico/evento-especifico.component';
+import {AgregarEventoComponent} from './components/admin/eventos/agregar-evento/agregar-evento.component';
 ///////////////////admin-components//////////////////
 
 /////////////////services-admin/////////////////////
@@ -26,6 +29,7 @@ import {SubirFotosService} from './services/uploadPhotos/subir-fotos.service';
 import {CrearProductoRefreshService} from './services/refresh-crear-prod/crear-producto-refresh.service';
 import {NavbarService} from './services/navbar-crear/navbar.service';
 import {PaginasService} from './services/paginas/paginas.service';
+import {EventoService} from './services/eventos/evento.service';
 /////////////////services-admin/////////////////////
 
 
@@ -36,6 +40,8 @@ import {CarouselComponent} from './components/front-end/carousel/carousel.compon
 import {PaginaComponent} from './components/front-end/pagina/pagina.component';
 import {AboutComponent} from './components/front-end/about/about.component';
 import {ContactoComponent} from './components/front-end/contacto/contacto.component';
+import {ReservasComponent} from './components/front-end/reservas/reservas.component';
+import {EventoEspecificoComponent} from './components/front-end/evento-especifico/evento-especifico.component';
 ////////////////components-front///////////////////
 
 
@@ -59,7 +65,12 @@ export const routesComponents=[
  CarouselComponent,
  PaginaComponent,
  AboutComponent,
- ContactoComponent
+ ContactoComponent,
+ ReservasComponent,
+ EventoEspecificoComponent,
+ EventosComponent,
+ EventoEspecificoAdminComponent,
+ AgregarEventoComponent
 ];
 
 export const serviceComponents=[
@@ -68,7 +79,8 @@ guardAdmin,
 SubirFotosService,
 CrearProductoRefreshService,
 NavbarService,
-PaginasService
+PaginasService,
+EventoService
 ]
 
 const appRoutes:Routes=[
@@ -85,13 +97,18 @@ const appRoutes:Routes=[
  {path:'admin/paginas/agregar',component:AgregarPaginaComponent,canActivate:[guardAdmin]},
  {path:'admin/paginas/ver/:id',component:VerPaginaComponent,canActivate:[guardAdmin]},
  {path:'admin/config',component:ConfigComponent,canActivate:[guardAdmin]},
+ {path:'admin/eventos',component:EventosComponent,canActivate:[guardAdmin]},
+ {path:'admin/evento/:id',component:EventoEspecificoAdminComponent,canActivate:[guardAdmin]},
+ {path:'admin/eventos/agregar',component:AgregarEventoComponent,canActivate:[guardAdmin]},
  /////////////rutas-admin/////////////
 
 ////////////rutas-front/////////////
  {path:'',component:IndexComponentFront},
  {path:'index/:id',component:PaginaComponent},
  {path:'contacto',component:ContactoComponent},
- {path:'acerca',component:AboutComponent}
+ {path:'acerca',component:AboutComponent},
+ {path:'eventos',component:ReservasComponent},
+ {path:'evento/:id',component:EventoEspecificoComponent}
 ////////////rutas-front/////////////
 
 ];

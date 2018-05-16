@@ -1,3 +1,31 @@
-<p>
-  reservas works!
-</p>
+<app-navbar-front></app-navbar-front>
+ <div class="container-body">
+   <div class="container-fluid">
+     <div class="row">
+       <div class="col-12" style="text-align: center;">
+          <h1>Eventos Próximos</h1>
+       </div>
+     </div>
+      <div class="row">
+        <div class="col-12" id="list-container">
+         <br>
+              <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let evento of arrayEventos">
+                     <div class="row rowList">
+                       <div class="cols col-4">
+                         <img class="img-fluid" src="{{evento.imagenes[0].secure_url}}" alt="">
+                         <p></p>
+                       </div>
+                       <div class="cols col-6">
+                          <p class="titulo">{{evento.titulo}}</p>
+                        </div>
+                        <div class="cols col-2">
+                          <a routerLink="/evento/{{evento._id}}" class="btn btn-success" >Ver Más</a>
+                        </div>
+                     </div>
+                  </li>
+              </ul>
+        </div>
+      </div>
+   </div>
+ </div>

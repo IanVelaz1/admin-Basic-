@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+.carousel-inner{
+}
+.fotos{
+  max-width: 100%!important;
+  max-height: 100%!important;
+  height: 1000px;
+  border-radius: 10px;
+}
+
+.titulo{
+
+}
+
+.desc{
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  background: #222222;
+  color: deeppink;
+  border-radius: 12px;
+}
+
+#cont-descripcion{
+  background: #222222;
+  color: deeppink;
+ 
+}
+
+.texto{
+  font-size: 130%;
+
+}

@@ -12,6 +12,9 @@ import {ModalModule} from 'ngx-bootstrap/modal';
 import {DropzoneModule} from 'ngx-dropzone-wrapper';
 import {FileDropModule} from 'ngx-file-drop';
 
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+
+
 import {routesComponents,Routing,serviceComponents} from "./componentes.module";
 
 import { AppComponent } from './app.component';
@@ -41,7 +44,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     QuillModule,
     DropzoneModule,
     FileDropModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   providers: [serviceComponents, {
     provide: DROPZONE_CONFIG,
