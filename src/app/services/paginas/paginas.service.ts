@@ -9,19 +9,19 @@ export class PaginasService {
   constructor(private http:HttpClient) { }
 
   guardarPagina(pagina){
-    return this.http.post(`/pagina`,pagina);
+    return this.http.post(`${this.domain}/pagina`,pagina);
   }
 
   recuperarPaginas(){
-    return this.http.get(`/pagina`);
+    return this.http.get(`${this.domain}/pagina`);
   }
 
   recuperarPaginaById(id){
-    return this.http.get(`/pagina/`+id);
+    return this.http.get(`${this.domain}/pagina/`+id);
   }
 
   editarPagina(id,pagina){
-    return this.http.put(`/pagina/`+id,pagina);
+    return this.http.put(`${this.domain}/pagina/`+id,pagina);
   }
 
 }

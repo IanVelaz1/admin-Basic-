@@ -8,18 +8,18 @@ export class SubirFotosService {
 
    
   subirFoto(foto){
-    return this.http.post(`/imagenes/subir`,foto);
+    return this.http.post(`${this.domain}/imagenes/subir`,foto);
   }
 
   recuperarFotos(){
-    return this.http.get(`/imagenes/subir`);
+    return this.http.get(`${this.domain}/imagenes/subir`);
   }
 
   recuperarFotoById(id){
-    return this.http.get(`/imagenes/subir/`+id);
+    return this.http.get(`${this.domain}/imagenes/subir/`+id);
   }
 
   eliminarImagen(id){
-    return this.http.delete(`/imagenes/`+id);
+    return this.http.delete(`${this.domain}/imagenes/`+id);
   }
 }

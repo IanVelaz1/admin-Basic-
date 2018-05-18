@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {NavbarService} from '../../../services/navbar-crear/navbar.service';
+import {Navegacion} from '../../../interfaces/navegacion'
 @Component({
   selector: 'app-navbar-front',
   templateUrl: './navbar-front.component.html',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarFrontComponent implements OnInit {
 
-  constructor() { }
+  constructor(private navHttp:NavbarService) { }
 
   ngOnInit() {
+    this.recuperarNav();
   }
    
   openNav(){
@@ -19,6 +21,20 @@ export class NavbarFrontComponent implements OnInit {
   closeNav(){
     document.getElementById("myNav").style.width = "0%";
   }
+
+  objetoNavbar;
+  arrayNavbar:Navegacion[]=[];
+  recuperarNav(){
+    this.navHttp.recuperarNavbar().subscribe(navbar=>{
+      this.objetoNavbar=navbar;
+      this.arrayNavbar=this.objetoNavbar.navbar;
+      console.log('====================================');
+      console.log(navbar);
+      console.log('====================================');
+    });
+  }
+
+  
 
 
 }

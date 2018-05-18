@@ -12,4 +12,8 @@ export class IndexFrontComponent implements OnInit {
   ngOnInit() {
   }
 
+  muteVideo(){
+    
+  }
+
 }
