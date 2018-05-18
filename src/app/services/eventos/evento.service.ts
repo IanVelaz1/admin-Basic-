@@ -10,23 +10,23 @@ export class EventoService {
    }
 
    guardarEvento(evento){
-    return this.httpClient.post(`${this.domain}/evento`,evento);
+    return this.httpClient.post(`/evento`,evento);
    }
 
    recuperarEventos(){
-    return this.httpClient.get(`${this.domain}/evento`);
+    return this.httpClient.get(`/evento`);
    }
 
    recuperarEventoEspecifico(id){
-     return this.httpClient.get(`${this.domain}/evento/`+id);
+     return this.httpClient.get(`/evento/`+id);
    }
 
    editarEventoEspecifico(id,evento){
-     return this.httpClient.put(`${this.domain}/evento/`+id,evento);
+     return this.httpClient.put(`/evento/`+id,evento);
    }
 
    eliminarEventos(id){
-     return this.httpClient.delete(`${this.domain}/evento/`+id);
+     return this.httpClient.delete(`/evento/`+id);
    }
 
 }

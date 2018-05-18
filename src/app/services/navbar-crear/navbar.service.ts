@@ -7,23 +7,23 @@ export class NavbarService {
   constructor(private http:HttpClient) { }
   
   guardarNavbar(navbar){
-   return this.http.post(`${this.domain}/navbar`,navbar);
+   return this.http.post(`/navbar`,navbar);
   }
 
   recuperarNavbar(){
-    return this.http.get(`${this.domain}/navbar`);
+    return this.http.get(`/navbar`);
   }
 
   recuperarNavbarById(id){
-    return this.http.get(`${this.domain}/navbar/`+id);
+    return this.http.get(`/navbar/`+id);
   }
 
   editarNavbar(id,navbar){
-    return this.http.put(`${this.domain}/navbar/`+id,navbar);
+    return this.http.put(`/navbar/`+id,navbar);
   }
 
   eliminarNavbar(id){
-    return this.http.delete(`${this.domain}/navbar/`+id);
+    return this.http.delete(`/navbar/`+id);
   }
 
 }

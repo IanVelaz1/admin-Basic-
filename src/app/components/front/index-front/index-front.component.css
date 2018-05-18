@@ -1,0 +1,8 @@
+.container-fluid{
+  height: 100vh;
+  border: 1px solid black;
+  background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)), url(https://images.pexels.com/photos/490466/pexels-photo-490466.jpeg?auto=compress&cs=tinysrgb&h=650&w=940);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
