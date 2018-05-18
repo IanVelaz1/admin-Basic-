@@ -34,14 +34,8 @@ import {EventoService} from './services/eventos/evento.service';
 
 
 ////////////////components-front///////////////////
-import {IndexComponentFront} from './components/front-end/index/index.component'
-import {NavbarFrontComponent} from './components/front-end/navbar-front/navbar-front.component'
-import {CarouselComponent} from './components/front-end/carousel/carousel.component';
-import {PaginaComponent} from './components/front-end/pagina/pagina.component';
-import {AboutComponent} from './components/front-end/about/about.component';
-import {ContactoComponent} from './components/front-end/contacto/contacto.component';
-import {ReservasComponent} from './components/front-end/reservas/reservas.component';
-import {EventoEspecificoComponent} from './components/front-end/evento-especifico/evento-especifico.component';
+import {IndexFrontComponent} from './components/front/index-front/index-front.component';
+import {NavbarFrontComponent} from './components/front/navbar-front/navbar-front.component';
 ////////////////components-front///////////////////
 
 
@@ -55,22 +49,16 @@ export const routesComponents=[
  RefreshCreateProduct,
  NavegacionComponent,
  AgregarElementoComponent,
- IndexComponentFront,
- NavbarFrontComponent,
  VerObjetoNavegacionComponent,
  PaginasComponent,
  AgregarPaginaComponent,
  VerPaginaComponent,
  ConfigComponent,
- CarouselComponent,
- PaginaComponent,
- AboutComponent,
- ContactoComponent,
- ReservasComponent,
- EventoEspecificoComponent,
  EventosComponent,
  EventoEspecificoAdminComponent,
- AgregarEventoComponent
+ AgregarEventoComponent,
+ IndexFrontComponent,
+ NavbarFrontComponent
 ];
 
 export const serviceComponents=[
@@ -103,12 +91,7 @@ const appRoutes:Routes=[
  /////////////rutas-admin/////////////
 
 ////////////rutas-front/////////////
- {path:'',component:IndexComponentFront},
- {path:'index/:id',component:PaginaComponent},
- {path:'contacto',component:ContactoComponent},
- {path:'acerca',component:AboutComponent},
- {path:'eventos',component:ReservasComponent},
- {path:'evento/:id',component:EventoEspecificoComponent}
+{path:'',component:IndexFrontComponent}
 ////////////rutas-front/////////////
 
 ];
