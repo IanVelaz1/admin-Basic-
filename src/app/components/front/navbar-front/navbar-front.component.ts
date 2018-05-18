@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NavbarService} from '../../../services/navbar-crear/navbar.service';
 import {Navegacion} from '../../../interfaces/navegacion'
+
 @Component({
   selector: 'app-navbar-front',
   templateUrl: './navbar-front.component.html',
@@ -12,10 +13,14 @@ export class NavbarFrontComponent implements OnInit {
 
   ngOnInit() {
     this.recuperarNav();
+    
   }
    
   openNav(){
     document.getElementById("myNav").style.width = "100%";
+    console.log('====================================');
+    console.log('click');
+    console.log('====================================');
   }
 
   closeNav(){
@@ -33,6 +38,8 @@ export class NavbarFrontComponent implements OnInit {
       console.log('====================================');
     });
   }
+
+
 
   
 
