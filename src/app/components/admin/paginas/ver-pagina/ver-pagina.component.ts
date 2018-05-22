@@ -1,10 +1,11 @@
 import { Component, OnInit,ChangeDetectorRef } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute,Router} from '@angular/router';
 import {SubirFotosService} from '../../../../services/uploadPhotos/subir-fotos.service';
 import {PaginasService} from '../../../../services/paginas/paginas.service';
 import { HttpHeaders } from '@angular/common/http';
 import {UploadEvent,UploadFile, FileSystemFileEntry, FileSystemDirectoryEntry} from 'ngx-file-drop';
 import {DomSanitizer} from '@angular/platform-browser';
+
 @Component({
   selector: 'app-ver-pagina',
   templateUrl: './ver-pagina.component.html',
@@ -13,7 +14,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class VerPaginaComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,private ref:ChangeDetectorRef,
-  private httpPaginas:PaginasService,private httpFotos:SubirFotosService) { }
+  private httpPaginas:PaginasService,private httpFotos:SubirFotosService, private router:Router) { }
   id:string;
   ngOnInit() {
     this.route.params.subscribe(params=>{
@@ -45,8 +46,11 @@ export class VerPaginaComponent implements OnInit {
       console.log('====================================');
       this.objetoPaginaRecuperada=pagina;
       this.objetoPagina.titulo=this.objetoPaginaRecuperada.pagina.pagina.titulo;
+      this.objetoPagina.descripcion=this.objetoPaginaRecuperada.pagina.pagina.descripcion;
+      this.objetoPagina.urlVideo=this.objetoPaginaRecuperada.pagina.pagina.urlVideo;
       this.objetoPagina.imagenesCarousel=this.objetoPaginaRecuperada.pagina.pagina.imagenesCarousel;
       this.objetoPagina.imagenesColeccion=this.objetoPaginaRecuperada.pagina.pagina.imagenesColeccion;
+
     });
   }
 
@@ -182,6 +186,9 @@ public droppedCollection(event:UploadEvent){
 
     objetoPagina={
       titulo:"",
+      descripcion:"",
+      urlVideo:"",
+      hovered:false,
       imagenesCarousel:[],
       imagenesColeccion:[]
     }
@@ -197,6 +204,12 @@ public droppedCollection(event:UploadEvent){
         console.log('====================================');
         console.log(pagina);
         console.log('====================================');
+      });
+    }
+
+    eliminarPagina(){
+      this.httpPaginas.eliminarPagina(this.id).subscribe(pagina=>{
+         this.router.navigate(['/admin/paginas']);
       });
     }
 

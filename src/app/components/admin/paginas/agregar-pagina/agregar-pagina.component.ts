@@ -162,6 +162,9 @@ public droppedCollection(event:UploadEvent){
 
     objetoPagina={
       titulo:"",
+      descripcion:"",
+      urlVideo:"",
+      hovered:false,
       imagenesCarousel:this.fotosCarousel,
       imagenesColeccion:this.fotosColeccion
     }

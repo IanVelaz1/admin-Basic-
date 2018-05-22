@@ -36,6 +36,7 @@ import {EventoService} from './services/eventos/evento.service';
 ////////////////components-front///////////////////
 import {IndexFrontComponent} from './components/front/index-front/index-front.component';
 import {NavbarFrontComponent} from './components/front/navbar-front/navbar-front.component';
+import {AboutComponent} from './components/front/about/about.component';
 ////////////////components-front///////////////////
 
 
@@ -58,7 +59,8 @@ export const routesComponents=[
  EventoEspecificoAdminComponent,
  AgregarEventoComponent,
  IndexFrontComponent,
- NavbarFrontComponent
+ NavbarFrontComponent,
+ AboutComponent
 ];
 
 export const serviceComponents=[

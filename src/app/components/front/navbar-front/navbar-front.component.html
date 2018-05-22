@@ -1,7 +1,16 @@
 <div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <a [ngClass]="{'loading':animateClose==true}" href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
   <div class="overlay-content">
-    <a *ngFor="let nav of arrayNavbar" href="#">{{nav.titulo}}</a>
+             <div *ngFor="let nav of arrayNavbar" class="wrapper">
+                    <span class="square">
+                      <a class="tenth before after" href="#">{{nav.titulo}}</a>
+                    </span>
+              </div>
   </div>
 </div>
-<span style="font-size:30px;cursor:pointer" class="btn-nav" (click)="openNav()">&#9776; </span>
+
+
+<div style="font-size:30px;cursor:pointer; float: right;" class="btn-nav"
+[ngClass]="{'loading':animate==true}" id="icono" (click)="openNav()" (click)="animarNav()">
+    <div class="el"><i class="fas fa-align-justify"  style="margin-right: 20px;" id="unitlessValue"></i></div>
+  </div>

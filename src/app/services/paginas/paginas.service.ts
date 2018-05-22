@@ -24,4 +24,8 @@ export class PaginasService {
     return this.http.put(`${this.domain}/pagina/`+id,pagina);
   }
 
+  eliminarPagina(id){
+    return this.http.delete(`${this.domain}/pagina/`+id);
+  }
+
 }

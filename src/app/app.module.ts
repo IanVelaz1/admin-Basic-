@@ -14,8 +14,9 @@ import {FileDropModule} from 'ngx-file-drop';
 
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 
-
 import {routesComponents,Routing,serviceComponents} from "./componentes.module";
+
+import { ParticlesModule } from 'angular-particle';
 
 import { AppComponent } from './app.component';
 
@@ -45,7 +46,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     DropzoneModule,
     FileDropModule,
     ModalModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    ParticlesModule
   ],
   providers: [serviceComponents, {
     provide: DROPZONE_CONFIG,
